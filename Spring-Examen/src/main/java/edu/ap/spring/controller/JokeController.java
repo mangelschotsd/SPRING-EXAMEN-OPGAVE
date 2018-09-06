@@ -2,6 +2,7 @@ package edu.ap.spring.controller;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -24,10 +25,10 @@ public class JokeController {
 			   "&lastName=" + lastName;
 	   
 	   RestTemplate restTemplate = new RestTemplate();
-	   String result = restTemplate.getForObject(uri, String.class);
+	   String joke = restTemplate.getForObject(uri, String.class);
 	   
-	  
-	   return result;
+	   
+	   return joke;
    }
    
    @RequestMapping("/")

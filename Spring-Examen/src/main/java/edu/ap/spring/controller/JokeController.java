@@ -1,8 +1,6 @@
 package edu.ap.spring.controller;
 
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -25,15 +23,9 @@ public class JokeController {
    @RequestMapping("/joke_post")
    @ResponseBody
    public String joke_post() {
-	   URL url;
-	try {
-		url = new URL("http://example.com");
-		   HttpURLConnection con = (HttpURLConnection) url.openConnection();
-		   con.setRequestMethod("GET");
-	} catch (MalformedURLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	   URL url = new URL("http://example.com");
+	   HttpURLConnection con = (HttpURLConnection) url.openConnection();
+	   con.setRequestMethod("GET");
 	   return "";
    }
    
